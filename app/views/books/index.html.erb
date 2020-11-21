@@ -1,0 +1,21 @@
+<h1>萬寶路的書店</h1>
+
+<%= link_to "新增書藉", new_book_path %>
+
+<table>
+<thead>
+<tr>
+<td>書名</td>
+<td>價格</td>
+<td>得票數</td>
+</tr></thead>
+<tbody>
+<% @books.each do |book| %>
+<tr>
+<td><%= link_to "喜歡這本書", vote_book_path(book), method: "post", data: { confirm: "投票給這本書？" } %></td>
+<td><%= book.name %></td>
+<td><%= book.price %></td>
+<td><%= book.vote_logs.size %></td>
+<td><%= link_to "編輯", edit_book_path(book) %></td>
+<td><%= link_to "刪除", book_path(book), method: "delete", data: { confirm: "確認刪除" } %></td></tr>
+<% end %></tbody></table>
