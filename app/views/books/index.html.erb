@@ -2,9 +2,10 @@
 
 <%= link_to "新增書藉", new_book_path %>
 
-<table>
+<table class="table">
 <thead>
 <tr>
+<td>投票</td>
 <td>書名</td>
 <td>價格</td>
 <td>得票數</td>
@@ -12,7 +13,7 @@
 <tbody>
 <% @books.each do |book| %>
 <tr>
-<td><%= link_to "喜歡這本書", vote_book_path(book), method: "post", data: { confirm: "投票給這本書？" } %></td>
+<td><%= link_to "喜歡這本書", vote_book_path(book), method: "post", data: { confirm: "投票給這本書？" }, class: "btn btn-danger btn-xs" %></td>
 <td><%= book.name %></td>
 <td><%= book.price %></td>
 <td><%= book.vote_logs.size %></td>

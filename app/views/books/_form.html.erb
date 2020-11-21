@@ -1,7 +1,7 @@
-<%= form_for(book) do |f| %>
-<%= f.label :name, "書名" %>
-<%= f.text_field :name %>
-<%= f.label :price, "價格"%>
-<%= f.text_field :price %>
+
+
+<%= simple_form_for(book) do |f| %>
+<%= f.input :name, label: "書名" %>
+<%= f.input :price, label: "價格"%>
 <%= f.submit %>
 <% end %>
