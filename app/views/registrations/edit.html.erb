@@ -1,0 +1,20 @@
+<h1>修改會員資料</h1>
+
+<div class="fields">
+<%= form_for(current_user, url: users_path, method: 'put' ) do |f| %>
+<div>
+<div class="fields">
+<%= f.label :email%>
+<%= f.text_field :email %>
+</div>
+<div class="fields">
+<%= f.label :nickname, '暱稱' %>
+<%= f.text_field :nickname %>
+</div>
+<div class="fields">
+  <%= f.submit '更新' %>
+</div>
+
+</div>
+<% end %>
+</div>
